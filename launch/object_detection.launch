@@ -19,8 +19,8 @@
 	<!-- Static TF boradcaster -->
 	<node pkg="object_detect" type="camera_static_tf.py" name="camera_static_tf" args="camera 0 0 1 0 0 0">
 	</node>
-	<!-- Object detection node -->
+	<!-- Object detection node 
 	<node pkg="object_detect" type="object_detection_node.py" name="object_detection_node">
-	</node>
+	</node> -->
 	
 </launch>

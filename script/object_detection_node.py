@@ -7,6 +7,8 @@ import geometry_msgs.msg
 import tf2_geometry_msgs
 from ar_track_alvar_msgs.msg import AlvarMarkers
 
+marker_pose = None
+world_frame = "world"
 
 class object_detection_node(object):
 
@@ -17,16 +19,18 @@ class object_detection_node(object):
         self.tf_listener = tf2_ros.TransformListener(self.tf_buffer)
         self.ar_pose_sub = rospy.Subscriber("ar_pose_marker", AlvarMarkers, self.ar_marker_cb)
 
-    def ar_marker_cb(self):
+    def ar_marker_cb(self, msg):
         rospy.loginfo("inside ar_marker callback")
         global marker_pose
+        marker_id = 0
         for marker in msg.markers:
             if marker.id == marker_id:  # check marker.id on /ar_pose_marker topic
-                self.marker.pose.header.frame_id=marker.header.frame_id
-                self.marker_pose=self.transform_pose(
-                    self.marker.pose, world_frame)
+                marker.pose.header.frame_id=marker.header.frame_id
+                marker_pose=self.transform_pose(
+                   marker.pose, world_frame)
 
     def transform_pose(self, pose, target_frame):
+        rospy.loginfo("inside transform_pose")
         self.transform=self.tf_buffer.lookup_transform(target_frame,
                                         pose.header.frame_id,  # source frame
                                         # at first available time
