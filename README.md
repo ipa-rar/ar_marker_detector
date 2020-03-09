@@ -15,4 +15,5 @@ To calculate the pose of the marker using the camera
 ![](concept.png)
 
 ### Usage
+`roslaunch ar_marker_detector marker_detector.launch`
 `roservice call /getMarkerPose`
