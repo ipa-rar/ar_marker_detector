@@ -11,5 +11,8 @@ To calculate the pose of the marker using the camera
 - Service `/getMarkerPose` of type `getMarkerPose`
 -  Publishes `Pose of the marker ` of type `Pose`
 
-
+### Architecture
 ![](concept.png)
+
+### Usage
+`roservice call /getMarkerPose`
