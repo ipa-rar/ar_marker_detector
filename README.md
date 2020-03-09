@@ -10,4 +10,6 @@ To calculate the pose of the marker using the camera
 - Subscribe to topic `ar_pose_marker` of type `AlvarMarkers`
 - Service `/getMarkerPose` of type `getMarkerPose`
 -  Publishes `Pose of the marker ` of type `Pose`
+
+
 ![](concept.png)
