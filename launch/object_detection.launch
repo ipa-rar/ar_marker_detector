@@ -16,11 +16,11 @@
 		<remap from="camera_image"  to="$(arg cam_image_topic)" />
 		<remap from="camera_info"   to="$(arg cam_info_topic)" />
 	</node>	
-	<!-- Static TF boradcaster -->
-	<node pkg="object_detect" type="camera_static_tf.py" name="camera_static_tf" args="camera 0 0 1 0 0 0">
+	<!-- Static TF boradcaster                                                   target_frame x y z r p y -->
+	<node pkg="ar_marker_detector" type="camera_static_tf.py" name="camera_static_tf" args="camera 0 0 1 0 0 0">
 	</node>
-	<!-- Object detection node 
-	<node pkg="object_detect" type="object_detection_node.py" name="object_detection_node">
-	</node> -->
+	<!-- Object detection node -->
+	<node pkg="ar_marker_detector" type="getmarker_pose.py" name="getmarker_pose">
+	</node> 
 	
 </launch>
