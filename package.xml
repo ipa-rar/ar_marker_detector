@@ -60,6 +60,8 @@
   <exec_depend>tf2</exec_depend>
   <exec_depend>tf2_ros</exec_depend>
   <exec_depend>message_runtime</exec_depend>
+  <exec_depend>usb_cam</exec_depend>
+  <exec_depend>ar_track_alvar</exec_depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>

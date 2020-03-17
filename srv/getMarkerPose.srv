@@ -1,3 +1,5 @@
-
+#request-marker ID
+int8 ar_marker_id
 ---
+#response-marker pose
 geometry_msgs/Pose pose
